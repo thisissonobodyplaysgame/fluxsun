@@ -1,12 +1,13 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google Drive</title>
+<title>Galactic Movies</title>
  <link rel="icon" href="favicon.ico" type="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/3840px-Google_Drive_icon_%282020%29.svg.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -232,6 +233,176 @@
   .age-gate-confirm:hover { background: #ddd; transform: translateY(-2px); }
   .age-gate-cancel { background: none; color: var(--text-muted); border: 1px solid var(--border); border-radius: var(--radius); padding: 11px 20px; font-size: .86rem; font-family: inherit; cursor: pointer; transition: color .18s, border-color .18s; }
   .age-gate-cancel:hover { color: var(--white); border-color: #666; }
+
+  /* GALAXY THEME */
+  :root {
+    --bg: #080510;
+    --bg2: rgba(24, 16, 44, .82);
+    --bg3: #312052;
+    --border: rgba(189, 157, 255, .20);
+    --text: #e7e0f6;
+    --text-muted: #a69bbd;
+    --white: #fffaff;
+    --black: #120a20;
+    --tag-bg: rgba(119, 76, 184, .24);
+    --tag-text: #d7c7f6;
+    --radius: 14px;
+  }
+
+  body {
+    position: relative;
+    background:
+      radial-gradient(ellipse at 14% 2%, rgba(126, 56, 211, .32), transparent 31rem),
+      radial-gradient(ellipse at 88% 24%, rgba(73, 41, 163, .26), transparent 35rem),
+      radial-gradient(ellipse at 50% 100%, rgba(50, 31, 106, .24), transparent 42rem),
+      #080510;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .72;
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,.92) 0 1px, transparent 1.6px),
+      radial-gradient(circle, rgba(212,178,255,.75) 0 1px, transparent 1.5px),
+      radial-gradient(circle, rgba(159,111,255,.55) 0 1px, transparent 1.7px);
+    background-size: 167px 167px, 251px 251px, 359px 359px;
+    background-position: 12px 19px, 77px 142px, 193px 63px;
+  }
+
+  #page-spinner { background: radial-gradient(circle at center, #241341, #080510 62%); }
+  #page-spinner .brand { color: #d1b9ff; }
+  #nav-bar { height: 3px; background: linear-gradient(90deg, #8d4cff, #e5c4ff, #8d4cff); }
+
+  nav {
+    width: min(calc(100% - 32px), 1380px);
+    min-height: 64px;
+    height: auto;
+    margin: 14px auto 0;
+    padding: 8px 18px;
+    display: grid;
+    grid-template-columns: minmax(150px, auto) 1fr minmax(120px, auto);
+    gap: 18px;
+    top: 12px;
+    background: linear-gradient(115deg, rgba(30,18,54,.92), rgba(15,11,31,.84));
+    border: 1px solid rgba(207,175,255,.24);
+    border-radius: 18px;
+    box-shadow: 0 16px 45px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  .logo { font-size: 1.1rem; color: var(--white); }
+  .logo svg { filter: drop-shadow(0 0 8px rgba(193,139,255,.9)); }
+  .logo .flux { color: #f2eaff; }
+  .logo .tube { color: #b98cff; }
+  .nav-tabs { justify-self: center; margin-left: 0; padding: 4px; gap: 4px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; }
+  .nav-tab { color: #b6aacb; padding: 7px 13px; border-radius: 9px; }
+  .nav-tab:hover { color: #fff; background: rgba(168,108,255,.16); }
+  .nav-tab.active { color: #fff; background: linear-gradient(135deg, #8a4be6, #5f36b1); box-shadow: 0 5px 14px rgba(87,43,169,.38); }
+  .nav-search-btn { justify-self: end; color: #ded1f4; background: rgba(13,9,27,.5); border-color: rgba(208,175,255,.24); box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }
+  .nav-search-btn:hover { color: #fff; border-color: #b27aff; background: rgba(120,67,196,.2); }
+
+  main { max-width: 1440px; padding: 0 32px 76px; }
+  .hero-search-zone {
+    position: relative;
+    min-height: 332px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 88px 52px 46px;
+    text-align: left;
+    overflow: visible;
+    z-index: 20;
+  }
+  .hero-search-zone::before {
+    content: '';
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    top: -235px;
+    right: -80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(206,139,255,.34), rgba(104,55,199,.14) 42%, transparent 70%);
+    filter: blur(2px);
+    pointer-events: none;
+  }
+  .hero-search-zone h1 { position: relative; max-width: 660px; font-size: clamp(2.1rem, 5vw, 4.25rem); line-height: .98; letter-spacing: -2px; text-align: left; margin-bottom: 25px; text-wrap: balance; }
+  .hero-search-zone h1::before { content: 'STREAM THE UNIVERSE'; display: block; margin-bottom: 13px; color: #c6a2ff; font-size: .68rem; font-weight: 700; letter-spacing: .24em; }
+  .hero-search-field { position: relative; z-index: 5; max-width: 620px; }
+  .hero-search-field.focused { max-width: 720px; }
+  .hero-search-field input { background: rgba(15,10,30,.76); border-color: rgba(209,177,255,.32); border-radius: 16px; padding: 16px 18px 16px 48px; box-shadow: 0 16px 35px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.06); }
+  .hero-search-field input:focus { border-color: #c08cff; background: rgba(30,18,57,.9); box-shadow: 0 0 0 4px rgba(159,92,255,.15), 0 18px 40px rgba(0,0,0,.28); }
+  .hero-search-field .s-icon { left: 17px; color: #cfafff; }
+  .search-dropdown { z-index: 300; background: rgba(27,18,50,.97); border-color: rgba(207,172,255,.28); border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.55); }
+  .search-result-item:hover { background: rgba(145,83,220,.16); }
+  .search-result-item .sd-badge { background: rgba(153,91,236,.22); color: #d7c0ff; }
+
+  .popular-section { position: relative; z-index: 1; background: linear-gradient(135deg, rgba(37,23,70,.86), rgba(15,10,30,.72)); border: 1px solid rgba(205,173,255,.18); border-radius: 22px; box-shadow: 0 24px 56px rgba(0,0,0,.23), inset 0 1px 0 rgba(255,255,255,.06); }
+  .popular-section .section-header { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+  .section-header h2 { font-size: 1.35rem; letter-spacing: -.5px; }
+  .section-header h2::after { content: ''; display: block; width: 46px; height: 3px; margin-top: 9px; border-radius: 99px; background: linear-gradient(90deg, #d6b1ff, #7840d4); }
+  .section-header p { color: #a99dc1; }
+  #heroContainer { padding: 18px 20px 20px !important; }
+  .hero-banner { height: 500px; border: 1px solid rgba(227,207,255,.14); border-radius: 17px; box-shadow: 0 20px 45px rgba(0,0,0,.35); }
+  .hero-banner::after { background: linear-gradient(90deg, rgba(8,5,16,.96) 0%, rgba(15,8,29,.72) 43%, rgba(17,7,37,.16) 73%, rgba(8,5,16,.12) 100%); }
+  .hero-content { max-width: 600px; padding: 42px; }
+  .hero-rank .num { color: #c49aff; text-shadow: 0 0 20px rgba(185,125,255,.55); }
+  .hero-rank .title { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+  .tag { background: rgba(112,68,178,.2); border-color: rgba(214,183,255,.22); color: #e6d8ff; backdrop-filter: blur(8px); }
+  .tag:hover { background: rgba(160,95,238,.34); border-color: #d3a8ff; }
+  .view-info-btn, .watch-now-btn { background: linear-gradient(135deg, #b273ff, #6d3bca); border-color: transparent; color: #fff; box-shadow: 0 10px 24px rgba(108,52,196,.34); }
+  .view-info-btn:hover, .watch-now-btn:hover { background: linear-gradient(135deg, #c18cff, #7f48df); box-shadow: 0 14px 30px rgba(122,65,219,.42); }
+
+  .grid-section { margin-bottom: 48px; }
+  .grid-section > .section-header { display: flex; align-items: end; justify-content: space-between; }
+  .media-grid { gap: 16px; }
+  #home-movies-grid, #home-shows-grid, #home-anime-grid { grid-template-columns: repeat(5, 1fr); }
+  .media-card { background: linear-gradient(160deg, rgba(43,27,79,.88), rgba(20,13,38,.92)); border-color: rgba(207,173,255,.12); border-radius: 16px; box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }
+  .media-card:hover { transform: translateY(-8px) scale(1.018); border-color: rgba(211,169,255,.58); box-shadow: 0 20px 38px rgba(0,0,0,.42), 0 0 0 1px rgba(175,111,255,.12); }
+  .media-card .img-wrap { border-bottom: 1px solid rgba(214,185,255,.12); }
+  .media-card-info { padding: 12px 12px 14px; }
+  .media-card-info .type-badge { color: #ba90f2; }
+  .media-card-info .card-title { font-size: .88rem; }
+  .genre-chip, .ep-btn, .ep-pill, .season-pill, .back-btn, .back-btn-overlay, .stream-btn { background: rgba(37,23,68,.72); border-color: rgba(204,169,255,.2); color: #ded2ef; }
+  .genre-chip:hover, .ep-btn:hover, .ep-pill:hover, .season-pill:hover, .back-btn:hover, .back-btn-overlay:hover, .stream-btn:hover:not(.active) { background: rgba(127,69,205,.25); border-color: #b882ff; color: #fff; }
+  .genre-chip.active, .ep-btn.active, .ep-pill.active, .season-pill.active, .stream-btn.active { background: linear-gradient(135deg, #b173ff, #6936c6); border-color: #c697ff; color: #fff; box-shadow: 0 7px 18px rgba(90,43,175,.32); }
+  .skeleton { background: linear-gradient(90deg, #1a1032 25%, #3a225f 50%, #1a1032 75%); background-size: 200% 100%; }
+
+  .info-hero { margin-top: 26px; border: 1px solid rgba(206,170,255,.18); border-radius: 20px 20px 0 0; }
+  .info-hero::after { background: linear-gradient(to bottom, rgba(8,5,16,0) 20%, #080510 100%); }
+  .info-poster { border-color: rgba(210,176,255,.4); box-shadow: 0 14px 30px rgba(0,0,0,.35); }
+  .info-card { background: linear-gradient(135deg, rgba(38,23,70,.86), rgba(18,12,35,.9)); border-color: rgba(209,174,255,.18); border-radius: 18px; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
+  .video-outer { margin-top: 30px; border: 1px solid rgba(205,167,255,.28); border-radius: 20px; box-shadow: 0 22px 55px rgba(0,0,0,.4), 0 0 36px rgba(113,55,202,.13); }
+  .video-wrap { border-radius: 19px; }
+  .player-meta-bar { margin-top: 14px; padding: 14px; border: 1px solid rgba(205,167,255,.16); border-radius: 16px; background: rgba(30,18,56,.68); }
+  .ep-strip-wrap { padding: 18px; border: 1px solid rgba(205,167,255,.14); border-radius: 16px; background: rgba(23,14,43,.54); }
+
+  #age-gate { background: rgba(5,3,11,.78); }
+  .age-gate-box { background: linear-gradient(135deg, #251442, #120b23); border-color: rgba(213,181,255,.32); box-shadow: 0 32px 80px rgba(0,0,0,.7), 0 0 48px rgba(121,59,216,.2); }
+  .age-gate-badge { background: linear-gradient(135deg, #b95cff, #6c2fc2); }
+  .age-gate-confirm { background: linear-gradient(135deg, #b273ff, #6d3bca); color: #fff; }
+  .age-gate-confirm:hover { background: linear-gradient(135deg, #c18cff, #7f48df); }
+
+  @media (max-width: 1100px) {
+    #home-movies-grid, #home-shows-grid, #home-anime-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 760px) {
+    nav { width: calc(100% - 20px); grid-template-columns: 1fr auto; gap: 8px; padding: 8px 10px; }
+    .nav-tabs { grid-column: 1 / -1; grid-row: 2; width: 100%; justify-content: space-between; }
+    .nav-tab { padding: 7px 9px; font-size: .76rem; }
+    .nav-search-btn { padding: 7px 9px; font-size: 0; }
+    .nav-search-btn svg { width: 16px; height: 16px; }
+    main { padding: 0 14px 52px; }
+    .hero-search-zone { min-height: 290px; padding: 68px 18px 36px; }
+    .hero-search-zone h1 { font-size: clamp(2rem, 11vw, 3.1rem); letter-spacing: -1.5px; }
+    .popular-section .section-header { display: block; }
+    .popular-section { border-radius: 18px; }
+    #heroContainer { padding: 14px !important; }
+    .hero-banner { height: 430px; border-radius: 14px; }
+    .hero-content { padding: 24px; }
+    #home-movies-grid, #home-shows-grid, #home-anime-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .media-grid { gap: 10px; }
+    .info-body { padding-left: 8px; padding-right: 8px; }
+  }
 </style>
 </head>
 <body>
@@ -253,7 +424,7 @@
 <!-- PAGE SPINNER (initial load only) -->
 <div id="page-spinner">
   <div class="spinner" style="width:42px;height:42px;border-width:3px;"></div>
-  <div class="brand">Sunshine Cinema</div>
+  <div class="brand">GALACTIC MOVIES</div>
 </div>
 <!-- NAV LOADING BAR -->
 <div id="nav-bar"></div>
@@ -262,7 +433,7 @@
 <nav>
   <a class="logo" href="#" onclick="showSection('home');return false;">
     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#fff"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
-    <span class="flux">Sunshine</span><span class="tube">Cinema</span>
+    <span class="flux">Galactic</span><span class="tube">Movies</span>
   </a>
   <div class="nav-tabs">
     <button class="nav-tab active" id="tab-home"    onclick="showSection('home')">Home</button>
@@ -281,7 +452,7 @@
   <!-- HOME PAGE -->
   <div id="home-page">
     <div class="hero-search-zone">
-      <h1>Movies, Shows &amp; Anime</h1>
+      <h1>Movies, shows, and anime in one orbit.</h1>
       <div class="hero-search-field" id="heroSearchField">
         <svg class="s-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="text" id="heroSearchInput" placeholder="Search everything…"
@@ -305,7 +476,7 @@
 
     <!-- Trending Movies -->
     <div class="grid-section">
-      <div class="section-header"><h2>Trending Movies</h2><p>Most popular in cinemas &amp; streaming</p></div>
+      <div class="section-header"><h2>Trending Movies</h2><p>Most popular in Moviess &amp; streaming</p></div>
       <div class="media-grid" id="home-movies-grid"></div>
     </div>
 
