@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -525,11 +527,7 @@ function switchSource(src) {
     document.getElementById(`src-${s}`)?.classList.toggle('active', s === src)
   );
   const iframe = document.getElementById('videoIframe');
-  if (src === '2embed') {
-    iframe.removeAttribute('sandbox');
-  } else {
-    iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-presentation');
-  }
+  iframe.removeAttribute('sandbox');
   iframe.src = buildSrc(currentItem.id, currentItem.type, currentSeason, currentEp);
 }
 
@@ -635,11 +633,7 @@ function playItem(id, type, name, season, ep) {
   document.getElementById('videoTitle').textContent   = name;
   document.getElementById('videoEpLabel').textContent = type !== 'movie' ? `S${season} · E${ep}` : '';
   const _iframe = document.getElementById('videoIframe');
-  if (currentSource === '2embed') {
-    _iframe.removeAttribute('sandbox');
-  } else {
-    _iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-presentation');
-  }
+  _iframe.removeAttribute('sandbox');
   _iframe.src = buildSrc(id, type, season, ep);
   document.getElementById('backFromVideo').onclick    = () => { hideAllPages(); restorePrevSection(); };
   ['vidking','mist','2embed'].forEach(s =>
@@ -1130,15 +1124,6 @@ window.addEventListener('message', e => {
   // drop any message trying to redirect the parent
   if (typeof e.data === 'string' && /location|redirect|navigate/i.test(e.data)) e.stopImmediatePropagation();
 }, true);
-// Block beforeunload redirects triggered by iframes
-document.getElementById('videoIframe').addEventListener('load', function() {
-  try {
-    if (currentSource !== '2embed') {
-      this.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-presentation');
-    }
-  } catch(e) {}
-});
-
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') document.getElementById('searchDropdown').classList.remove('visible');
 });
