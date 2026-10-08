@@ -234,175 +234,165 @@
   .age-gate-cancel { background: none; color: var(--text-muted); border: 1px solid var(--border); border-radius: var(--radius); padding: 11px 20px; font-size: .86rem; font-family: inherit; cursor: pointer; transition: color .18s, border-color .18s; }
   .age-gate-cancel:hover { color: var(--white); border-color: #666; }
 
-  /* GALAXY THEME */
+    /* MECHANIC THEME -- black & white, boxed, clean */
   :root {
-    --bg: #080510;
-    --bg2: rgba(24, 16, 44, .82);
-    --bg3: #312052;
-    --border: rgba(189, 157, 255, .20);
-    --text: #e7e0f6;
-    --text-muted: #a69bbd;
-    --white: #fffaff;
-    --black: #120a20;
-    --tag-bg: rgba(119, 76, 184, .24);
-    --tag-text: #d7c7f6;
-    --radius: 14px;
+    --bg: #000000;
+    --bg2: #0d0d0d;
+    --bg3: #1a1a1a;
+    --border: #262626;
+    --text: #f2f2f2;
+    --text-muted: #8f8f8f;
+    --white: #ffffff;
+    --black: #000000;
+    --tag-bg: #0e0e0e;
+    --tag-text: #b3b3b3;
+    --radius: 4px;
   }
+
+  ::selection { background: var(--white); color: var(--black); }
 
   body {
     position: relative;
     background:
-      radial-gradient(ellipse at 14% 2%, rgba(126, 56, 211, .32), transparent 31rem),
-      radial-gradient(ellipse at 88% 24%, rgba(73, 41, 163, .26), transparent 35rem),
-      radial-gradient(ellipse at 50% 100%, rgba(50, 31, 106, .24), transparent 42rem),
-      #080510;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    opacity: .72;
-    background-image:
-      radial-gradient(circle, rgba(255,255,255,.92) 0 1px, transparent 1.6px),
-      radial-gradient(circle, rgba(212,178,255,.75) 0 1px, transparent 1.5px),
-      radial-gradient(circle, rgba(159,111,255,.55) 0 1px, transparent 1.7px);
-    background-size: 167px 167px, 251px 251px, 359px 359px;
-    background-position: 12px 19px, 77px 142px, 193px 63px;
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+      #000;
+    background-size: 48px 48px;
   }
 
-  #page-spinner { background: radial-gradient(circle at center, #241341, #080510 62%); }
-  #page-spinner .brand { color: #d1b9ff; }
-  #nav-bar { height: 3px; background: linear-gradient(90deg, #8d4cff, #e5c4ff, #8d4cff); }
+  #page-spinner { background: #000; }
+  #page-spinner .brand { color: #666; letter-spacing: 5px; }
+
+  #nav-bar { height: 3px; background: #fff; }
 
   nav {
-    width: min(calc(100% - 32px), 1380px);
-    min-height: 64px;
-    height: auto;
-    margin: 14px auto 0;
-    padding: 8px 18px;
-    display: grid;
-    grid-template-columns: minmax(150px, auto) 1fr minmax(120px, auto);
-    gap: 18px;
-    top: 12px;
-    background: linear-gradient(115deg, rgba(30,18,54,.92), rgba(15,11,31,.84));
-    border: 1px solid rgba(207,175,255,.24);
-    border-radius: 18px;
-    box-shadow: 0 16px 45px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.08);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: min(calc(100% - 32px), 1400px);
+    min-height: 56px;
+    margin: 12px auto 0;
+    padding: 0 16px;
+    background: #050505;
+    border: 1px solid #2e2e2e;
+    border-radius: var(--radius);
   }
-  .logo { font-size: 1.1rem; color: var(--white); }
-  .logo svg { filter: drop-shadow(0 0 8px rgba(193,139,255,.9)); }
-  .logo .flux { color: #f2eaff; }
-  .logo .tube { color: #b98cff; }
-  .nav-tabs { justify-self: center; margin-left: 0; padding: 4px; gap: 4px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; }
-  .nav-tab { color: #b6aacb; padding: 7px 13px; border-radius: 9px; }
-  .nav-tab:hover { color: #fff; background: rgba(168,108,255,.16); }
-  .nav-tab.active { color: #fff; background: linear-gradient(135deg, #8a4be6, #5f36b1); box-shadow: 0 5px 14px rgba(87,43,169,.38); }
-  .nav-search-btn { justify-self: end; color: #ded1f4; background: rgba(13,9,27,.5); border-color: rgba(208,175,255,.24); box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }
-  .nav-search-btn:hover { color: #fff; border-color: #b27aff; background: rgba(120,67,196,.2); }
+  .logo { font-size: 1.05rem; letter-spacing: .5px; color: var(--white); }
+  .logo svg { filter: none; }
+  .logo .flux { color: #fff; }
+  .logo .tube { color: #666; }
 
-  main { max-width: 1440px; padding: 0 32px 76px; }
-  .hero-search-zone {
-    position: relative;
-    min-height: 332px;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 88px 52px 46px;
-    text-align: left;
-    overflow: visible;
-    z-index: 20;
-  }
-  .hero-search-zone::before {
-    content: '';
-    position: absolute;
-    width: 440px;
-    height: 440px;
-    top: -235px;
-    right: -80px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(206,139,255,.34), rgba(104,55,199,.14) 42%, transparent 70%);
-    filter: blur(2px);
-    pointer-events: none;
-  }
-  .hero-search-zone h1 { position: relative; max-width: 660px; font-size: clamp(2.1rem, 5vw, 4.25rem); line-height: .98; letter-spacing: -2px; text-align: left; margin-bottom: 25px; text-wrap: balance; }
-  .hero-search-zone h1::before { content: 'STREAM THE UNIVERSE'; display: block; margin-bottom: 13px; color: #c6a2ff; font-size: .68rem; font-weight: 700; letter-spacing: .24em; }
-  .hero-search-field { position: relative; z-index: 5; max-width: 620px; }
-  .hero-search-field.focused { max-width: 720px; }
-  .hero-search-field input { background: rgba(15,10,30,.76); border-color: rgba(209,177,255,.32); border-radius: 16px; padding: 16px 18px 16px 48px; box-shadow: 0 16px 35px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.06); }
-  .hero-search-field input:focus { border-color: #c08cff; background: rgba(30,18,57,.9); box-shadow: 0 0 0 4px rgba(159,92,255,.15), 0 18px 40px rgba(0,0,0,.28); }
-  .hero-search-field .s-icon { left: 17px; color: #cfafff; }
-  .search-dropdown { z-index: 300; background: rgba(27,18,50,.97); border-color: rgba(207,172,255,.28); border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.55); }
-  .search-result-item:hover { background: rgba(145,83,220,.16); }
-  .search-result-item .sd-badge { background: rgba(153,91,236,.22); color: #d7c0ff; }
+  .nav-tabs { display: flex; gap: 0; margin-left: 8px; background: none; border: 1px solid #262626; border-radius: var(--radius); overflow: hidden; padding: 0; }
+  .nav-tab { color: var(--text-muted); padding: 8px 15px; border-radius: 0; border-right: 1px solid #1e1e1e; }
+  .nav-tab:last-child { border-right: none; }
+  .nav-tab:hover { color: #fff; background: #141414; }
+  .nav-tab.active { color: var(--black); background: #fff; box-shadow: none; }
 
-  .popular-section { position: relative; z-index: 1; background: linear-gradient(135deg, rgba(37,23,70,.86), rgba(15,10,30,.72)); border: 1px solid rgba(205,173,255,.18); border-radius: 22px; box-shadow: 0 24px 56px rgba(0,0,0,.23), inset 0 1px 0 rgba(255,255,255,.06); }
-  .popular-section .section-header { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
-  .section-header h2 { font-size: 1.35rem; letter-spacing: -.5px; }
-  .section-header h2::after { content: ''; display: block; width: 46px; height: 3px; margin-top: 9px; border-radius: 99px; background: linear-gradient(90deg, #d6b1ff, #7840d4); }
-  .section-header p { color: #a99dc1; }
-  #heroContainer { padding: 18px 20px 20px !important; }
-  .hero-banner { height: 500px; border: 1px solid rgba(227,207,255,.14); border-radius: 17px; box-shadow: 0 20px 45px rgba(0,0,0,.35); }
-  .hero-banner::after { background: linear-gradient(90deg, rgba(8,5,16,.96) 0%, rgba(15,8,29,.72) 43%, rgba(17,7,37,.16) 73%, rgba(8,5,16,.12) 100%); }
-  .hero-content { max-width: 600px; padding: 42px; }
-  .hero-rank .num { color: #c49aff; text-shadow: 0 0 20px rgba(185,125,255,.55); }
-  .hero-rank .title { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-  .tag { background: rgba(112,68,178,.2); border-color: rgba(214,183,255,.22); color: #e6d8ff; backdrop-filter: blur(8px); }
-  .tag:hover { background: rgba(160,95,238,.34); border-color: #d3a8ff; }
-  .view-info-btn, .watch-now-btn { background: linear-gradient(135deg, #b273ff, #6d3bca); border-color: transparent; color: #fff; box-shadow: 0 10px 24px rgba(108,52,196,.34); }
-  .view-info-btn:hover, .watch-now-btn:hover { background: linear-gradient(135deg, #c18cff, #7f48df); box-shadow: 0 14px 30px rgba(122,65,219,.42); }
+  .nav-search-btn { margin-left: auto; color: var(--text-muted); background: #0a0a0a; border: 1px solid #2e2e2e; box-shadow: none; border-radius: var(--radius); }
+  .nav-search-btn:hover { color: #fff; border-color: #fff; background: #111; }
 
-  .grid-section { margin-bottom: 48px; }
-  .grid-section > .section-header { display: flex; align-items: end; justify-content: space-between; }
-  .media-grid { gap: 16px; }
-  #home-movies-grid, #home-shows-grid, #home-anime-grid { grid-template-columns: repeat(5, 1fr); }
-  .media-card { background: linear-gradient(160deg, rgba(43,27,79,.88), rgba(20,13,38,.92)); border-color: rgba(207,173,255,.12); border-radius: 16px; box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }
-  .media-card:hover { transform: translateY(-8px) scale(1.018); border-color: rgba(211,169,255,.58); box-shadow: 0 20px 38px rgba(0,0,0,.42), 0 0 0 1px rgba(175,111,255,.12); }
-  .media-card .img-wrap { border-bottom: 1px solid rgba(214,185,255,.12); }
-  .media-card-info { padding: 12px 12px 14px; }
-  .media-card-info .type-badge { color: #ba90f2; }
-  .media-card-info .card-title { font-size: .88rem; }
-  .genre-chip, .ep-btn, .ep-pill, .season-pill, .back-btn, .back-btn-overlay, .stream-btn { background: rgba(37,23,68,.72); border-color: rgba(204,169,255,.2); color: #ded2ef; }
-  .genre-chip:hover, .ep-btn:hover, .ep-pill:hover, .season-pill:hover, .back-btn:hover, .back-btn-overlay:hover, .stream-btn:hover:not(.active) { background: rgba(127,69,205,.25); border-color: #b882ff; color: #fff; }
-  .genre-chip.active, .ep-btn.active, .ep-pill.active, .season-pill.active, .stream-btn.active { background: linear-gradient(135deg, #b173ff, #6936c6); border-color: #c697ff; color: #fff; box-shadow: 0 7px 18px rgba(90,43,175,.32); }
-  .skeleton { background: linear-gradient(90deg, #1a1032 25%, #3a225f 50%, #1a1032 75%); background-size: 200% 100%; }
+  main { max-width: 1400px; padding: 0 32px 64px; }
 
-  .info-hero { margin-top: 26px; border: 1px solid rgba(206,170,255,.18); border-radius: 20px 20px 0 0; }
-  .info-hero::after { background: linear-gradient(to bottom, rgba(8,5,16,0) 20%, #080510 100%); }
-  .info-poster { border-color: rgba(210,176,255,.4); box-shadow: 0 14px 30px rgba(0,0,0,.35); }
-  .info-card { background: linear-gradient(135deg, rgba(38,23,70,.86), rgba(18,12,35,.9)); border-color: rgba(209,174,255,.18); border-radius: 18px; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
-  .video-outer { margin-top: 30px; border: 1px solid rgba(205,167,255,.28); border-radius: 20px; box-shadow: 0 22px 55px rgba(0,0,0,.4), 0 0 36px rgba(113,55,202,.13); }
-  .video-wrap { border-radius: 19px; }
-  .player-meta-bar { margin-top: 14px; padding: 14px; border: 1px solid rgba(205,167,255,.16); border-radius: 16px; background: rgba(30,18,56,.68); }
-  .ep-strip-wrap { padding: 18px; border: 1px solid rgba(205,167,255,.14); border-radius: 16px; background: rgba(23,14,43,.54); }
+  .hero-search-zone { justify-content: center; padding: 70px 24px 44px; text-align: center; align-items: center; }
+  .hero-search-zone h1 { position: relative; max-width: 740px; font-size: clamp(1.9rem, 4.5vw, 3.4rem); letter-spacing: -1.5px; text-align: center; margin-bottom: 26px; text-wrap: balance; }
+  .hero-search-zone h1::before { content: '// MECHANIC MEDIA'; display: block; margin-bottom: 14px; color: #666; font-size: .68rem; font-weight: 700; letter-spacing: .3em; }
+  .hero-search-field { max-width: 620px; }
+  .hero-search-field.focused { max-width: 700px; }
+  .hero-search-field input { background: #050505; border: 1px solid #2e2e2e; border-radius: var(--radius); color: var(--white); padding: 14px 16px 14px 44px; box-shadow: none; }
+  .hero-search-field input:focus { border-color: #fff; background: #0a0a0a; box-shadow: 0 0 0 1px #fff; }
+  .hero-search-field .s-icon { color: #666; }
+  .search-dropdown { background: #080808; border: 1px solid #333; border-radius: var(--radius); box-shadow: 0 18px 40px rgba(0,0,0,.9); }
+  .search-result-item:hover { background: #131313; }
+  .search-result-item .sd-badge { background: #161616; color: var(--text-muted); }
+  .search-footer-line { color: #666; }
 
-  #age-gate { background: rgba(5,3,11,.78); }
-  .age-gate-box { background: linear-gradient(135deg, #251442, #120b23); border-color: rgba(213,181,255,.32); box-shadow: 0 32px 80px rgba(0,0,0,.7), 0 0 48px rgba(121,59,216,.2); }
-  .age-gate-badge { background: linear-gradient(135deg, #b95cff, #6c2fc2); }
-  .age-gate-confirm { background: linear-gradient(135deg, #b273ff, #6d3bca); color: #fff; }
-  .age-gate-confirm:hover { background: linear-gradient(135deg, #c18cff, #7f48df); }
+  .popular-section { background: #070707; border: 1px solid #262626; border-radius: var(--radius); }
+  .section-header h2 { color: #fff; letter-spacing: -.3px; }
+  .section-header h2::after { content: ''; display: block; width: 34px; height: 4px; margin-top: 9px; background: #fff; border-radius: 0; }
+  .section-header p { color: var(--text-muted); }
+  #heroContainer { padding: 16px 16px 18px !important; }
+  .hero-banner { height: 460px; border: 1px solid #262626; border-radius: var(--radius); box-shadow: none; }
+  .hero-banner::after { background: linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.6) 45%, rgba(0,0,0,.1) 75%); }
+  .hero-banner:hover::after { opacity: 1; }
+  .hero-content { padding: 34px; }
+  .hero-rank .num { color: #fff; font-size: 1.7rem; }
+  .hero-rank .title { font-size: clamp(1.35rem, 2.6vw, 2rem); }
+  .hero-desc { color: #bdbdbd; }
+  .tag { background: rgba(255,255,255,.05); border-color: #333; color: #ccc; border-radius: 0; }
+  .tag:hover { background: #1c1c1c; border-color: #fff; color: #fff; }
+  .view-info-btn, .watch-now-btn { background: #fff; border-color: #fff; color: #000; border-radius: var(--radius); box-shadow: none; }
+  .view-info-btn:hover, .watch-now-btn:hover { background: #ccc; border-color: #ccc; box-shadow: none; }
+
+  .grid-section { margin-bottom: 44px; }
+  .media-grid { gap: 14px; }
+  #home-movies-grid, #home-shows-grid, #home-anime-grid { grid-template-columns: repeat(6, 1fr); }
+  .media-card { background: #0a0a0a; border: 1px solid #242424; border-radius: var(--radius); box-shadow: none; }
+  .media-card:hover { transform: translateY(-4px); border-color: #666; box-shadow: 0 10px 24px rgba(0,0,0,.85); }
+  .media-card .img-wrap { border-bottom: 1px solid #1c1c1c; }
+  .media-card-info { padding: 10px 12px 12px; }
+  .media-card-info .type-badge { color: #666; letter-spacing: 1.2px; }
+  .media-card-info .card-title { color: #e6e6e6; }
+  .media-card:hover .card-title { color: #fff; }
+
+  .genre-chip { border-radius: 0; border-color: #2e2e2e; }
+  .genre-chip:hover { border-color: #888; color: #fff; }
+  .genre-chip.active { background: #fff; border-color: #fff; color: #000; }
+
+  .ep-btn, .ep-pill, .season-pill, .back-btn, .back-btn-overlay, .stream-btn { border-radius: var(--radius); }
+  .ep-btn { background: #0a0a0a; border-color: #2c2c2c; color: #d9d9d9; }
+  .ep-btn:hover { background: #141414; border-color: #777; color: #fff; }
+  .ep-btn.active { background: #fff; border-color: #fff; color: #000; font-weight: 700; }
+  .ep-pill, .season-pill { background: #0a0a0a; border-color: #2c2c2c; color: #d9d9d9; }
+  .ep-pill:hover, .season-pill:hover { background: #141414; border-color: #777; color: #fff; }
+  .ep-pill.active, .season-pill.active { background: #fff; border-color: #fff; color: #000; font-weight: 700; }
+  .back-btn, .back-btn-overlay { background: #0a0a0a; border-color: #2c2c2c; color: var(--text-muted); }
+  .back-btn:hover, .back-btn-overlay:hover { background: #141414; border-color: #777; color: #fff; }
+  .stream-btn { background: #0a0a0a; border-color: #2c2c2c; color: #d9d9d9; }
+  .stream-btn:hover:not(.active) { background: #141414; border-color: #777; color: #fff; }
+  .stream-btn.active { background: #fff; border-color: #fff; color: #000; font-weight: 700; box-shadow: none; }
+
+  .skeleton { background: linear-gradient(90deg, #0d0d0d 25%, #1f1f1f 50%, #0d0d0d 75%); background-size: 200% 100%; }
+
+  .info-hero { margin-top: 26px; border: 1px solid #262626; border-radius: var(--radius); }
+  .info-hero::after { background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, #000 100%); }
+  .info-poster { border-color: #3a3a3a; box-shadow: none; border-radius: var(--radius); }
+  .info-card { background: #0a0a0a; border-color: #262626; border-radius: var(--radius); }
+  .description-text { color: #bcbcbc; }
+  .info-label { color: #666; letter-spacing: 1.5px; }
+  .info-value { color: #fff; }
+
+  .video-outer { margin-top: 28px; border: 1px solid #262626; border-radius: var(--radius); box-shadow: none; }
+  .video-wrap { border-radius: var(--radius); }
+  .player-meta-bar { margin-top: 12px; padding: 12px 14px; border: 1px solid #262626; border-radius: var(--radius); background: #070707; }
+  .ep-strip-wrap { padding: 16px; border: 1px solid #242424; border-radius: var(--radius); background: #060606; }
+  .ep-section-label { color: #6a6a6a; letter-spacing: 2px; }
+
+  #age-gate { background: rgba(0,0,0,.85); }
+  .age-gate-box { background: #0a0a0a; border: 1px solid #3a3a3a; border-radius: var(--radius); box-shadow: 0 24px 60px rgba(0,0,0,.9); }
+  .age-gate-badge { background: #fff; color: #000; border-radius: 0; }
+  .age-gate-confirm { background: #fff; color: #000; border-radius: var(--radius); }
+  .age-gate-confirm:hover { background: #ccc; }
+
+  .spinner { border-color: rgba(255,255,255,.15); border-top-color: #fff; }
 
   @media (max-width: 1100px) {
     #home-movies-grid, #home-shows-grid, #home-anime-grid { grid-template-columns: repeat(4, 1fr); }
   }
   @media (max-width: 760px) {
-    nav { width: calc(100% - 20px); grid-template-columns: 1fr auto; gap: 8px; padding: 8px 10px; }
-    .nav-tabs { grid-column: 1 / -1; grid-row: 2; width: 100%; justify-content: space-between; }
-    .nav-tab { padding: 7px 9px; font-size: .76rem; }
+    nav { width: calc(100% - 20px); flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
+    .nav-tabs { order: 3; width: 100%; justify-content: space-between; }
+    .nav-tab { border-right: none; flex: 1; text-align: center; }
     .nav-search-btn { padding: 7px 9px; font-size: 0; }
     .nav-search-btn svg { width: 16px; height: 16px; }
-    main { padding: 0 14px 52px; }
-    .hero-search-zone { min-height: 290px; padding: 68px 18px 36px; }
-    .hero-search-zone h1 { font-size: clamp(2rem, 11vw, 3.1rem); letter-spacing: -1.5px; }
-    .popular-section .section-header { display: block; }
-    .popular-section { border-radius: 18px; }
-    #heroContainer { padding: 14px !important; }
-    .hero-banner { height: 430px; border-radius: 14px; }
-    .hero-content { padding: 24px; }
+    main { padding: 0 14px 48px; }
+    .hero-search-zone { padding: 54px 14px 34px; }
+    .hero-search-zone h1 { font-size: clamp(1.8rem, 9vw, 2.6rem); }
+    .hero-banner { height: 400px; }
     #home-movies-grid, #home-shows-grid, #home-anime-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .media-grid { gap: 10px; }
     .info-body { padding-left: 8px; padding-right: 8px; }
   }
+
 </style>
 </head>
 <body>
@@ -432,7 +422,7 @@
 <!-- NAV -->
 <nav>
   <a class="logo" href="#" onclick="showSection('home');return false;">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#fff"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#fff"><rect x="3" y="3" width="18" height="18"/></svg>
     <span class="flux">Galactic</span><span class="tube">Movies</span>
   </a>
   <div class="nav-tabs">
@@ -578,9 +568,7 @@
         <div class="player-ep-info" id="videoEpLabel"></div>
       </div>
       <div class="stream-btns">
-        <button class="stream-btn active" id="src-vidking" onclick="switchSource('vidking')">VidKing</button>
-        <button class="stream-btn"        id="src-mist"    onclick="switchSource('mist')">Mist</button>
-        <button class="stream-btn"        id="src-2embed"  onclick="switchSource('2embed')">2Embed</button>
+        <button class="stream-btn active" id="src-mist" onclick="switchSource('mist')">Mist</button>
       </div>
     </div>
     <!-- Season + Episode grids -->
@@ -614,7 +602,7 @@ const BLOCKED_IDS = new Set([95897]);
 let currentItem   = null;   // { id, type, name }
 let currentEp     = 1;
 let currentSeason = 1;
-let currentSource = 'vidking';
+let currentSource = 'mist';
 let prevSection   = 'home';
 let prevInfoSection = 'home';
 
@@ -676,25 +664,15 @@ function endNav() {
 ═══════════════════════════════ */
 function buildSrc(id, type, s, e) {
   s = s || 1; e = e || 1;
-  if (currentSource === 'mist') {
-    return type === 'movie'
-      ? `https://play.xpass.top/e/movie/${id}`
-      : `https://play.xpass.top/e/tv/${id}/${s}/${e}`;
-  }
-  if (currentSource === '2embed') {
-    return type === 'movie'
-      ? `https://www.2embed.cc/embed/${id}`
-      : `https://www.2embed.cc/embedtv/${id}&s=${s}&e=${e}`;
-  }
-  // vidking (default)
+  // Mist is the only player
   return type === 'movie'
-    ? `https://www.vidking.net/embed/movie/${id}?color=ffffff&autoPlay=true`
-    : `https://www.vidking.net/embed/tv/${id}/${s}/${e}?color=ffffff&autoPlay=true&episodeSelector=false`;
+    ? `https://play.xpass.top/e/movie/${id}`
+    : `https://play.xpass.top/e/tv/${id}/${s}/${e}`;
 }
 
 function switchSource(src) {
   currentSource = src;
-  ['vidking','mist','2embed'].forEach(s =>
+  ['mist'].forEach(s =>
     document.getElementById(`src-${s}`)?.classList.toggle('active', s === src)
   );
   const iframe = document.getElementById('videoIframe');
@@ -807,7 +785,7 @@ function playItem(id, type, name, season, ep) {
   _iframe.removeAttribute('sandbox');
   _iframe.src = buildSrc(id, type, season, ep);
   document.getElementById('backFromVideo').onclick    = () => { hideAllPages(); restorePrevSection(); };
-  ['vidking','mist','2embed'].forEach(s =>
+  ['mist'].forEach(s =>
     document.getElementById(`src-${s}`)?.classList.toggle('active', s === currentSource)
   );
   // Mark active ep pill
