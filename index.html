@@ -568,8 +568,7 @@ body {
         <div class="player-ep-info" id="videoEpLabel"></div>
       </div>
       <div class="stream-btns">
-        <button class="stream-btn active" id="src-vidlink" onclick="switchSource('vidlink')">VidLink</button>
-        <button class="stream-btn"        id="src-mist"    onclick="switchSource('mist')">Mist</button>
+        <button class="stream-btn active" id="src-mist" onclick="switchSource('mist')">Mist</button>
       </div>
     </div>
     <!-- Season + Episode grids -->
@@ -603,7 +602,7 @@ const BLOCKED_IDS = new Set([95897]);
 let currentItem   = null;   // { id, type, name }
 let currentEp     = 1;
 let currentSeason = 1;
-let currentSource = 'vidlink';
+let currentSource = 'mist';
 let prevSection   = 'home';
 let prevInfoSection = 'home';
 
@@ -663,30 +662,23 @@ function endNav() {
 /* ═══════════════════════════════
    PLAYER
 ═══════════════════════════════ */
-// Every source below is a third-party embed. Loading one directly means a school filter
-// can block it and the host can refuse to be framed, so route it through the leskid
-// proxy instead: the proxy fetches the embed and serves it from our own origin.
+// The player is a third-party embed. Loading it directly means a school filter can block
+// it and the host can refuse to be framed, so route it through the leskid proxy instead:
+// the proxy fetches the embed and serves it from our own origin.
 const PLAYER_PROXY = 'https://thisissonobodyplaysgame.github.io/leskid/?url=';
 
 function buildSrc(id, type, s, e) {
   s = s || 1; e = e || 1;
-  let raw;
-  if (currentSource === 'mist') {
-    raw = type === 'movie'
-      ? `https://play.xpass.top/e/movie/${id}`
-      : `https://play.xpass.top/e/tv/${id}/${s}/${e}`;
-  } else {
-    // VidLink (default)
-    raw = type === 'movie'
-      ? `https://vidlink.pro/movie/${id}?autoplay=1`
-      : `https://vidlink.pro/tv/${id}/${s}/${e}?autoplay=1`;
-  }
+  // Mist is the only player
+  const raw = type === 'movie'
+    ? `https://play.xpass.top/e/movie/${id}`
+    : `https://play.xpass.top/e/tv/${id}/${s}/${e}`;
   return PLAYER_PROXY + encodeURIComponent(raw);
 }
 
 function switchSource(src) {
   currentSource = src;
-  ['vidlink','mist'].forEach(s =>
+  ['mist'].forEach(s =>
     document.getElementById(`src-${s}`)?.classList.toggle('active', s === src)
   );
   const iframe = document.getElementById('videoIframe');
@@ -799,7 +791,7 @@ function playItem(id, type, name, season, ep) {
   _iframe.removeAttribute('sandbox');
   _iframe.src = buildSrc(id, type, season, ep);
   document.getElementById('backFromVideo').onclick    = () => { hideAllPages(); restorePrevSection(); };
-  ['vidlink','mist'].forEach(s =>
+  ['mist'].forEach(s =>
     document.getElementById(`src-${s}`)?.classList.toggle('active', s === currentSource)
   );
   // Mark active ep pill
